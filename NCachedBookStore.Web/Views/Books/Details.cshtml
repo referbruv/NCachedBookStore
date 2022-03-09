@@ -1,0 +1,27 @@
+﻿@using NCachedBookStore.Contracts.Entities
+@model Book
+
+<div class="container-fluid">
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input type="text" class="form-control" asp-for="Name" disabled />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <textarea type="text" class="form-control" asp-for="Description" disabled></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="ISBN">ISBN</label>
+        <input type="text" class="form-control" asp-for="ISBN" disabled/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Price">Price</label>
+        <input type="number" class="form-control" asp-for="Price" disabled/>
+    </div>
+    <div class="form-group">
+        <label asp-for="AuthorName">Author Name</label>
+        <input type="text" class="form-control" asp-for="AuthorName" disabled/>
+    </div>
+    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.Id">Delete >></a>
+    <a class="btn btn-info" asp-action="Edit" asp-route-id="@Model.Id">Edit >></a>
+</div>

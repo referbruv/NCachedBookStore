@@ -1,0 +1,28 @@
+﻿@using NCachedBookStore.Contracts.Entities
+@model IEnumerable<Book>
+
+
+<div class="row">
+    @if (Model.Any())
+    {
+        <div class="col-md-12"><a class="btn btn-primary" asp-action="Create">Add New</a></div>
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <div class="card bg-light my-2">
+                    <div class="card-body">
+                        <h1 class="card-title">@item.Name</h1>
+                        <p class="card-text">@item.Description</p>
+                    </div>
+                    <div class="card-footer">
+                        <a asp-action="Details" asp-route-id="@item.Id">Details >></a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="col-md-12">No books found. <a asp-action="Create">Add New</a></div>
+    }
+</div>
