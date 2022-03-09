@@ -1,5 +1,9 @@
 # NCachedBookStore
 
+[![.NET](https://github.com/referbruv/NCachedBookStore/actions/workflows/dotnet.yml/badge.svg)](https://github.com/referbruv/NCachedBookStore/actions/workflows/dotnet.yml)
+![GitHub stars](https://img.shields.io/github/stars/referbruv/NCachedBookStore)
+[![Twitter Follow](https://img.shields.io/twitter/follow/referbruv?style=social&label=follow)](https://twitter.com/referbruv)
+
 NCachedBookStore is a simple project to demonstrate query caching with Entity Framework Core via NCache. The solution is a web application built on ASP.NET Core 3.1 which connects to a local SQL Server instance and a local NCache cluster for caching.
 
 # What is NCache?
