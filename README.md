@@ -38,6 +38,12 @@ or
 2. Navigate to NCachedBookStore.Web directory and open a command prompt / Terminal 
 3. Execute the command `dotnet run`
 
+# I want to know more
+
+To know more about this and to understand how this works in detail, I'd recommend you to check out the below article where bits and pieces of this solution have been used:
+
+* [Query Caching in Entity Framework Core using NCache ](https://referbruv.com/blog/posts/query-caching-in-entity-framework-core-using-ncache)
+
 # License
 
 The solution is completely open source and is licensed with MIT License.
