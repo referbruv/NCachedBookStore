@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+	<PackageReference Include="Alachisoft.NCache.SDK" Version="5.3.1" />
     <PackageReference Include="EntityFrameworkCore.NCache" Version="5.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.13">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

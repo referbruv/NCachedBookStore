@@ -22,6 +22,12 @@ namespace NCachedBookStore.Web.Controllers
             return View(books);
         }
 
+        public async Task<IActionResult> EditSuccessAsync(int id)
+        {
+            var book = await _mediator.Send(new GetBookByIdQuery(id));
+            return View("Success", book);
+        }
+
         // GET: BooksController/Details/5
         public async Task<ActionResult> DetailsAsync(int id)
         {
@@ -66,7 +72,7 @@ namespace NCachedBookStore.Web.Controllers
             try
             {
                 var book = await _mediator.Send(new UpdateBookCommand(entity, id));
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("EditSuccess", new { id });
             }
             catch
             {

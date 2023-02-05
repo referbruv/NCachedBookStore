@@ -3,8 +3,10 @@
 
 
 <div class="row">
-    @if (Model.Any())
-    {
+    <distributed-cache-ncache name="booksList" expires-sliding="new TimeSpan(0,10,0)"
+                              depends-on="SELECT [b].[Id], [b].[AddedOn], [b].[AuthorName], [b].[Description], [b].[ISBN], [b].[Name], [b].[Price]
+      FROM [Books] AS [b]"
+                              dependency-type="SQLServer">
         <div class="col-md-12"><a class="btn btn-primary" asp-action="Create">Add New</a></div>
         @foreach (var item in Model)
         {
@@ -20,9 +22,5 @@
                 </div>
             </div>
         }
-    }
-    else
-    {
-        <div class="col-md-12">No books found. <a asp-action="Create">Add New</a></div>
-    }
+    </distributed-cache-ncache>
 </div>
