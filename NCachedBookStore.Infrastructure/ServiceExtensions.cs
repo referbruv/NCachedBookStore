@@ -13,7 +13,7 @@ namespace NCachedBookStore.Infrastructure
         {
             services.AddDbContext<DatabaseContext>(optionsBuilder =>
             {
-                string cacheId = configuration["CacheId"];
+                string cacheId = configuration["NCacheSettings:CacheName"];
 
                 NCacheConfiguration.Configure(cacheId, DependencyType.SqlServer);
                 NCacheConfiguration.ConfigureLogger();

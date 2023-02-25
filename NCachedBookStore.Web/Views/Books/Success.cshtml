@@ -1,0 +1,12 @@
+@model NCachedBookStore.Contracts.Entities.Book
+
+@*THIS PAGE IS NEVER CACHED. IT INVALIDATES THE CACHED RESPONSE OF Details.cshtml FOR THE GIVEN BookID*@
+
+<distributed-cache-ncache name="Book:@{
+        @Model.Id
+}" invalidates="true">
+</distributed-cache-ncache>
+
+<h4>Book details have been updated sucessfully.</h4>
+
+<a href="~/Books">Go Home</a>

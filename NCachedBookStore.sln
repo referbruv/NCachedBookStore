@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution items", "solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NCachedBookStore.CachingProviders", "NCachedBookStore.CachingProviders\NCachedBookStore.CachingProviders.csproj", "{4CDA7675-C061-4816-9212-1BA9C3DB2899}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{6198C156-83A9-4971-88AF-37C7CD6B4B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6198C156-83A9-4971-88AF-37C7CD6B4B05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6198C156-83A9-4971-88AF-37C7CD6B4B05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CDA7675-C061-4816-9212-1BA9C3DB2899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CDA7675-C061-4816-9212-1BA9C3DB2899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CDA7675-C061-4816-9212-1BA9C3DB2899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CDA7675-C061-4816-9212-1BA9C3DB2899}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

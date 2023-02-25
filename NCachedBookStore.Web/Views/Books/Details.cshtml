@@ -1,27 +1,78 @@
 ﻿@using NCachedBookStore.Contracts.Entities
 @model Book
 
-<div class="container-fluid">
+<div class="row float-lg-right">
+    <h9 style=" color:red">Page Requested on @DateTime.Now.ToString()</h9>
+</div>
+
+<distributed-cache-ncache name="Book:@{
+    @Model.Id
+}" expires-on="@DateTime.Now.AddMinutes(20)">
+
+    <div class="row float-lg-right">
+        <h9 style=" color:green">Last generated at @DateTime.Now.ToString()</h9>
+    </div>
+
+    <div class="container-fluid">
+        <div class="form-group">
+            <label asp-for="Name">Name</label>
+            <input type="text" class="form-control" asp-for="Name" disabled />
+        </div>
+        <div class="form-group">
+            <label asp-for="Description">Description</label>
+            <textarea type="text" class="form-control" asp-for="Description" disabled></textarea>
+        </div>
+        <div class="form-group">
+            <label asp-for="ISBN">ISBN</label>
+            <input type="text" class="form-control" asp-for="ISBN" disabled />
+        </div>
+        <div class="form-group">
+            <label asp-for="Price">Price</label>
+            <input type="number" class="form-control" asp-for="Price" disabled />
+        </div>
+        <div class="form-group">
+            <label asp-for="AuthorName">Author Name</label>
+            <input type="text" class="form-control" asp-for="AuthorName" disabled />
+        </div>
+        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.Id">Delete >></a>
+        <a class="btn btn-info" asp-action="Edit" asp-route-id="@Model.Id">Edit >></a>
+    </div>
+</distributed-cache-ncache>
+
+@* <div class="row float-lg-right">
+    <h9 style=" color:red">Page Requested on @DateTime.Now.ToString()</h9>
+    </div>
+
+    <distributed-cache name="Book:@{
+    @Model.Id
+    }" expires-on="@DateTime.Now.AddMinutes(5)" vary-by-query="version">
+
+    <div class="row float-lg-right">
+    <h9 style=" color:green">Last generated at @DateTime.Now.ToString()</h9>
+    </div>
+
+    <div class="container-fluid">
     <div class="form-group">
-        <label asp-for="Name">Name</label>
-        <input type="text" class="form-control" asp-for="Name" disabled />
+    <label asp-for="Name">Name</label>
+    <input type="text" class="form-control" asp-for="Name" disabled />
     </div>
     <div class="form-group">
-        <label asp-for="Description">Description</label>
-        <textarea type="text" class="form-control" asp-for="Description" disabled></textarea>
+    <label asp-for="Description">Description</label>
+    <textarea type="text" class="form-control" asp-for="Description" disabled></textarea>
     </div>
     <div class="form-group">
-        <label asp-for="ISBN">ISBN</label>
-        <input type="text" class="form-control" asp-for="ISBN" disabled/>
+    <label asp-for="ISBN">ISBN</label>
+    <input type="text" class="form-control" asp-for="ISBN" disabled />
     </div>
     <div class="form-group">
-        <label asp-for="Price">Price</label>
-        <input type="number" class="form-control" asp-for="Price" disabled/>
+    <label asp-for="Price">Price</label>
+    <input type="number" class="form-control" asp-for="Price" disabled />
     </div>
     <div class="form-group">
-        <label asp-for="AuthorName">Author Name</label>
-        <input type="text" class="form-control" asp-for="AuthorName" disabled/>
+    <label asp-for="AuthorName">Author Name</label>
+    <input type="text" class="form-control" asp-for="AuthorName" disabled />
     </div>
     <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.Id">Delete >></a>
     <a class="btn btn-info" asp-action="Edit" asp-route-id="@Model.Id">Edit >></a>
-</div>
+    </div>
+    </distributed-cache> *@
